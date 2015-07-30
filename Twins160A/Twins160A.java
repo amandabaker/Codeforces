@@ -13,7 +13,7 @@ public class Twins160A {
         Arrays.sort(nums);
 
         int myMoney         = nums[n-1];
-        int myPosition      = n - 2;
+        int myPosition      = n - 1;
         int myTwinsMoney    = 0;
         int myTwinsPosition = 0;
 
@@ -25,10 +25,12 @@ public class Twins160A {
             }
             // if I have more money I get the Largest coin
             else {
-                myMoney += nums[myPosition--];
+                myMoney += nums[--myPosition];
             }
         }
-        System.out.println(n-myPosition); 
+        System.out.println(n-myPosition);
+        //System.out.println("n: " + n);
+        //System.out.println("myPosition: " + myPosition);
 
         
     }
