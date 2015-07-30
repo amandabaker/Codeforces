@@ -17,7 +17,7 @@ public class Twins160A {
         int myTwinsMoney    = 0;
         int myTwinsPosition = 0;
 
-        while (myPosition >= myTwinsPosition ){
+        while (myPosition > myTwinsPosition ){
             // if I have more money he gets the smallest coin
             if (myTwinsMoney < myMoney &&
                 myTwinsMoney + nums[myTwinsPosition] < myMoney) {
