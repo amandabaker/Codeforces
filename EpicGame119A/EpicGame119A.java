@@ -5,21 +5,27 @@ public class EpicGame119A {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        int simon     = in.nextInt();
-        int antisimon = in.nextInt();
-        int numStones = in.nextInt();
-        boolean done  = false;
-        // TEMPORARY TO SKIP WHILE LOOP
-        done = true;
+        int simon        = in.nextInt();
+        int antisimon    = in.nextInt();
+        int numStones    = in.nextInt();
+        int winner       = 1;            //assumes simon did NOT win
 
-        while (!done) {
-            // Simon's hand
-            
-            //if not done, then antisimon's hand
+        while (numStones > 0) {
+            // Simon's turn
+            numStones -= GCF (simon, numStones);
+
+
+            // if there are no stones, then simon won
+            if (numStones == 0) {
+                winner = 0;
+                break;
+            }
+
+            // otherwise its antisimon's turn
+            numStones -= GCF (antisimon, numStones);
         }
 
-        // test gcf
-        System.out.println(GCF(simon, antisimon));
+        System.out.println(winner);
     }
 
     public static int GCF (int a, int b) {
