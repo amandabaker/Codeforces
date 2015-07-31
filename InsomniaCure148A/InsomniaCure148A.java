@@ -12,12 +12,10 @@ public class InsomniaCure148A {
         // number of dragons total
         int d = in.nextInt();
 
-        //boolean[] unfortunateDragons = new boolean[d];
-
         // keep track of injured dragons
         int count = 0;
-        for (int i=0; i<d; i++) {
-            if (d%k == 0 || d%l == 0 || d%m == 0 || d%n == 0){
+        for (int i=1; i<=d; i++) {
+            if (i%k == 0 || i%l == 0 || i%m == 0 || i%n == 0){
                 count++;
             }
         }
