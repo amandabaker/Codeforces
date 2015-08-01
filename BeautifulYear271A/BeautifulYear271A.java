@@ -11,53 +11,27 @@ public class BeautifulYear271A {
         int baseYear = in.nextInt();
         baseYear++;
 
-        int k = (baseYear       ) / 1000;
-        int h = (baseYear % 1000) / 100;
-        int d = (baseYear % 100 ) / 10;
-        int o = (baseYear % 10  ) / 1;
-
-        if (k == h){
-            h++;
+        while (!DifferentDigits(baseYear)){
+            baseYear++;
         }
 
-        if (k == d){
-            d++;
-        }
-        if (h == d){
-            d++;
-            if (k == d) {
-                d++;
-            }
-        }
-
-        if (k == o){
-            o++;
-        }
-        if (h == o){
-            o++;
-            if (k == 0) {
-                o++;
-            }
-        }
-        if (d == o){
-            o++;
-            if (k == o) {
-                o++;
-            }
-            if (h == o){
-                o++;
-                if (k == o) {
-                    o++;
-                }
-            }
-        }
-        String str = "";
-        str += k;
-        str += h;
-        str += d;
-        str += o;
-        System.out.println(str);
-
+        System.out.println(baseYear);
         in.close();
+    }
+
+    /*
+      Checks to see if the digits are all different
+     */
+    public static boolean DifferentDigits(int year) {
+        int k = year / 1000;
+        int h = (year % 1000) / 100;
+        int d = (year % 100 ) / 10;
+        int o = (year % 10  ) / 1;
+
+        if (k == h || k == d || k == o || h == d || h == o || d == o) {
+            return false;
+        }
+
+        return true;
     }
 }
